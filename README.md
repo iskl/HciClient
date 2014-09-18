@@ -1,5 +1,5 @@
-objectivve # HciClient
-â€”â€” Extend the Sensory Ability of Desktop Computer using Mobile Device (Client Side)
+# HciClient
+¡ª¡ª Extend the Sensory Ability of Desktop Computer using Mobile Device (Client Side)
 
 ## Description
 
@@ -10,12 +10,14 @@ The project, made up of server side and client side, intends to extend the senso
 The reasons for coming up with this project consist of these aspects as follows:
 
  * Desktop computer is short of sensory ability. Microphone, camera and touchpad are not standard equipped.
- * The sensors of mobile devices are abundant and are often standard epuipped.
+ * The sensors of mobile devices are abundant and are often standard equipped.
  * The way to combine desktop computer and mobile device is convenient.
 
 This project is a prototype of sensor combination between desktop computer browser and mobile phone. It combines the two by using Internet and QR code. User can use gesture effected on mobile phone to control the behaviour of movie playing in the computer.
 
 The figure blow illustrates the framework of this project (both server side and client side)
+
+![image](https://raw.githubusercontent.com/iskl/HciClient/master/docs/fig.png)
 
 ## Technical Detail
 
@@ -24,6 +26,10 @@ The client side is now implemented as an Android App developed on Android API 17
 ### Gravity Acceleration Sensor
 
 I use gravity sensor to get acceleration value of gravity from 3 orientation: X, Y, Z. Z stands for the vertical direction gravity acceleration and is 9.8m/s^2 as often. Its positive and negative states represent the position putting the phone. X represents the level of inclination holding the phone. I use this value to control volume up or down.
+
+![image](https://raw.githubusercontent.com/iskl/HciClient/master/docs/screenshot.png)
+
+The 3 figures on app UI tracks the value of gravity from 3 orientation,sorted as X, Y, Z. It is displayed here for development and debug.
 
 The project only use gravity acceleration sensor here to detect gestures, since I choose the series of gestures that are easy to detect and that's enough to distinguish them from each other. If complex gestures are to detect, other sensors on mobile phone should be included into the program, e.g. orientation acceleration sensor, vibration sensor.
 
@@ -55,12 +61,12 @@ I left interfaces in the code as well and new logic could be easy to insert.
 
 ### Behavior Translator
 
-The component of behavior translator here is responsible for translating the gestures judged by gesture detector to playing control command. The congruent relationship below is uesd in this app.
+The component of behavior translator here is responsible for translating the gestures judged by gesture detector to playing control command. The congruent relationship below is used in this app.
 
  * face up -> play
  * face down -> pause
  * inclined to right -> volume up
- * incliend to left -> volume down
+ * inclined to left -> volume down
  
 And besides, when the user enters the app, a play & fullscreen command will be generated. Correspondingly, when left, a pause command will be generated.
 
@@ -70,7 +76,7 @@ The component sends different HTTP signals to back end of server side. For play/
 
 In this project, I use different URLs to represent different kinds of behaviour, that's because it's easy to implement. But for larger engineering, I suppose to use JSON format data to store information and transfered to the same URL, since it's easy for code to extend and organize.
 
-Since it is only a prototype, the server and client are communicating inside a LAN. It is assumed that the server side is deplyed on IP address: 192.168.200.167. But I am quite sure it can be used throuth Internet, just by modifying the IP address to Internet one's. 
+Since it is only a prototype, the server and client are communicating inside a LAN. It is assumed that the server side is deployed on IP address: 192.168.200.167. But I am quite sure it can be used through Internet, just by modifying the IP address to Internet one's. 
 
 ## Steps of Use
 
@@ -79,7 +85,7 @@ Since it is only a prototype, the server and client are communicating inside a L
  * Prepare and mobile browser which has the functionality of QR code scanning (e.g. QQ Browser or UC Browser) on your mobile phone.
  * Run the server side on server.
  * On a desktop computer, open a browser and visit the server side website at http://192.168.200.167:5000
- * Open the browser and scan the QR code displayed on desktop computer browser. I comfirm page will be loaded in mobile phone browser.
+ * Open the browser and scan the QR code displayed on desktop computer browser. I confirm page will be loaded in mobile phone browser.
  * Touch the button to make sure to combine the mobile phone to this page. The app will be started automaticly and the movie should start itself at once.
  * Incline the phone to right to see the volume up, and incline the phone to left to see the volume down. Turn the phone upside down to see the movie pause.
  * If you left the app to see an SMS or takes a phone call, the movie will be paused automaticly.
@@ -89,4 +95,4 @@ Since it is only a prototype, the server and client are communicating inside a L
 
  * [Sensor Demo](https://bitbucket.org/kryszt/sensorsdemo/) : A demo using different kinds of sensors
  * [HMKCode](http://hmkcode.com/android-internet-connection-using-http-get-httpclient/) Android Internet Connection Using HTTP GET (HttpClient)
- * [Nielsenâ€™s Ten Usability Heuristics](http://faculty.kutztown.edu/rieksts/385/topics/hci/nielsen-summary.html)
+ * [Nielsen's Ten Usability Heuristics](http://faculty.kutztown.edu/rieksts/385/topics/hci/nielsen-summary.html)
