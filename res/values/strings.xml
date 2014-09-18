@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">HciProject</string>
+    <string name="waiting_for_reading">Waiting for reading</string>
+    <string name="ok">OK</string>
+    <string name="info">Info</string>
+    <string name="accuracy">Accuracy</string>
+    <string name="fps">FPS</string>
+    <string name="screen_orientation">Screen orientation</string>
+    <string name="orientation">"Orien"</string>
+    <string name="screen_settings">Screen settings</string>
+    <string name="same_scale">Same scale</string>
+
+</resources>

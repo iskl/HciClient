@@ -1,0 +1,6 @@
+.svn
+/.gradle
+/build
+/gen
+/*.iml
+/bin
