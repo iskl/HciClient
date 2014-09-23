@@ -1,5 +1,5 @@
 # HciClient
-¡ª¡ª Extend the Sensory Ability of Desktop Computer using Mobile Device (Client Side)
+   Extend the Sensory Ability of Desktop Computer using Mobile Device (Client Side)
 
 ## Description
 
